@@ -89,7 +89,7 @@ class QRPlatbaOutput extends QROutputAbstract {
 	}
 
 	/**
-	 * Creates a single QR pixel with the given settings
+	 * Creates  a single QR pixel with the given settings
 	 * @param int $x
 	 * @param int $y
 	 * @param array $rgb
