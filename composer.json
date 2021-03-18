@@ -1,0 +1,25 @@
+{
+	"name": "4vplacek/qr-platba",
+	"description": "QR Platba",
+	"type": "libary",
+	"license": [
+		"MIT"
+	],
+	"authors": [
+		{
+			"name": "Václav Plaček"
+		}
+	],
+	"require": {
+		"php": ">=7.4",
+		"ext-gd": "*",
+		"chillerlan/php-qrcode": "^4.3",
+		"nette/utils": "^3.2"
+	},
+	"autoload": {
+		"classmap": [
+			"src/"
+		]
+	},
+	"minimum-stability": "stable"
+}
