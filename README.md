@@ -2,7 +2,12 @@
 
 Knihovna pro generování QR plateb v PHP. 
 
-Podporuje PHP 7.4+
+Inspirováno [dfridrich/QRPlatba](https://github.com/dfridrich/QRPlatba) , ale je to postaveno nad knihovnou [chillerlan/php-qrcode](https://github.com/chillerlan/php-qrcode) takže malá velikost a minimum závislostí :heart:
+
+
+Přidává kolem QR kódu rámeček a label QR platba.
+
+PHP 7.4+
 
 ## Instalace pomocí Composeru
 
@@ -27,6 +32,22 @@ $qrPlatba->setIban("CZ1427000000000000333999")
 
 echo $qrPlatba->generateQr();
 
+```
+
+## Použití v Nette (Latte)
+
+```php
+<?php
+
+//...
+
+$this->template->qrPlatba = $qrPlatba->generateQr();
+```
+
+### Šablona
+
+```html
+<img src="{$qrPlatba|dataStream}" />
 ```
 
 ![Ukázka](qr_example.png)

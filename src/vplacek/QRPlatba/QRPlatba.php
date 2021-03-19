@@ -79,12 +79,12 @@ class QRPlatba {
 	/**
 	 * Nastavení čísla účtu ve formátu 12-3456789012/0100.
 	 *
-	 * @param $account
+	 * @param $iban
 	 *
 	 * @return $this
 	 */
-	public function setAccount($account) {
-		$this->keys['ACC'] = $account;
+	public function setIban(string $iban): QRPlatba {
+		$this->keys['ACC'] = $iban;
 
 		return $this;
 	}
@@ -96,7 +96,7 @@ class QRPlatba {
 	 *
 	 * @return $this
 	 */
-	public function setAmount($amount) {
+	public function setAmount(float $amount): QRPlatba {
 		$this->keys['AM'] = sprintf('%.2f', $amount);
 
 		return $this;
@@ -107,10 +107,31 @@ class QRPlatba {
 	 *
 	 * @param $vs
 	 *
+	 * @return QRPlatba
+	 */
+	public function setVariableSymbol(int $vs): QRPlatba {
+		if (strlen($vs) > 10) {
+			throw new \InvalidArgumentException('Variable symbol is higher than 10 chars');
+		}
+
+		$this->keys['X-VS'] = $vs;
+
+		return $this;
+	}
+
+	/**
+	 * Nastavení specifického symbolu.
+	 *
+	 * @param $ss
+	 *
+	 *
 	 * @return $this
 	 */
-	public function setVariableSymbol($vs) {
-		$this->keys['X-VS'] = $vs;
+	public function setSpecificSymbol(int $ss): QRPlatba {
+		if (strlen($ss) > 10) {
+			throw new \InvalidArgumentException('Specific symbol is higher than 10 chars');
+		}
+		$this->keys['X-SS'] = $ss;
 
 		return $this;
 	}
@@ -122,7 +143,11 @@ class QRPlatba {
 	 *
 	 * @return $this
 	 */
-	public function setConstantSymbol($cs) {
+	public function setConstantSymbol(int $cs): QRPlatba {
+		if (strlen($cs) > 10) {
+			throw new \InvalidArgumentException('Constant symbol is higher than 10 chars');
+		}
+
 		$this->keys['X-CS'] = $cs;
 
 		return $this;
@@ -135,7 +160,7 @@ class QRPlatba {
 	 *
 	 * @return $this
 	 */
-	public function setMessage($msg) {
+	public function setMessage(string $msg): QRPlatba {
 		$this->keys['MSG'] = mb_substr($this->stripDiacritics($msg), 0, 60);
 
 		return $this;
@@ -161,7 +186,7 @@ class QRPlatba {
 	 *
 	 * @return string
 	 */
-	public function toString(): string {
+	public function generateQr(): string {
 
 		$spayd = $this->generateSpayd();
 

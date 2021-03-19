@@ -80,7 +80,7 @@ class QRPlatbaOutput extends QROutputAbstract {
 
 		$canvas->filledRectangle((int)($this->length / 25), (int)($this->length - $this->length / 25), (int)($this->length / 1.7), $spodniOkraj, Image::rgb(255, 255, 255));
 
-		$font = __DIR__ . "/open_sans.ttf";
+		$font = __DIR__ . "/arial_bold.ttf";
 		$textSize = (int)(2.5 * $this->scale);
 		$canvas->ttfText($textSize, 0, (int)($this->length / 10), $this->length + $textSize, Image::rgb(0, 0, 0), $font, "QR platba");
 
