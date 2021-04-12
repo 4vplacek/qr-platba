@@ -102,6 +102,19 @@ class QRPlatba {
 		return $this;
 	}
 
+    /**
+     * Nastavení měny
+     *
+     * @param string $currency
+     *
+     * @return $this
+     */
+	public function setCurrency(string $currency): QRPlatba {
+        $this->keys['CC'] = $currency;
+
+        return $this;
+    }
+
 	/**
 	 * Nastavení variabilního symbolu.
 	 *
