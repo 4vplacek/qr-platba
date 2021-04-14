@@ -102,18 +102,21 @@ class QRPlatba {
 		return $this;
 	}
 
-    /**
-     * Nastavení měny
-     *
-     * @param string $currency
-     *
-     * @return $this
-     */
+	/**
+	 * Nastavení měny
+	 *
+	 * @param string $currency
+	 *
+	 * @return $this
+	 */
 	public function setCurrency(string $currency): QRPlatba {
-        $this->keys['CC'] = $currency;
+		if (strlen($currency) != 3) {
+			throw new \InvalidArgumentException('Currency must have three characters (ISO 4217)');
+		}
+		$this->keys['CC'] = strtoupper($currency);
 
-        return $this;
-    }
+		return $this;
+	}
 
 	/**
 	 * Nastavení variabilního symbolu.
@@ -188,6 +191,19 @@ class QRPlatba {
 	 */
 	public function setDueDate(DateTime $date) {
 		$this->keys['DT'] = $date->format('Ymd');
+
+		return $this;
+	}
+
+	/**
+	 * Nastavení jména příjemce. Z řetězce bude odstraněna diaktirika.
+	 *
+	 * @param $name
+	 *
+	 * @return $this
+	 */
+	public function setRecipientName($name) {
+		$this->keys['RN'] = mb_substr($this->stripDiacritics($name), 0, 35);
 
 		return $this;
 	}

@@ -28,6 +28,12 @@ header('Content-Type: image/png');
 $qrPlatba = new QRPlatba();
 $qrPlatba->setIban("CZ1427000000000000333999")
 	->setAmount(250)
+	->setScale(5) //velikost QR kodu
+	->setCurrency("EUR") //právě 3 znaky - ISO_4217. Výchozí je CZK
+	->setVariableSymbol(123456)
+	->setSpecificSymbol(1414)
+	->setRecipientName("Petr Novák")
+	->setDueDate(new DateTime("+ 14 days")) // nastaví datum splatnosti. Nedoporučuju používat. Banka zařadí platbu mezi plánované platby a klient nebude vědět, jestli ji odeslal
 	->setMessage("Fond Humanity Českého červeného kříže");
 
 echo $qrPlatba->generateQr();
