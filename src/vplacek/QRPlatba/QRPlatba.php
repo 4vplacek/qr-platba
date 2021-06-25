@@ -77,7 +77,7 @@ class QRPlatba {
 
 
 	/**
-	 * Nastavení čísla účtu ve formátu 12-3456789012/0100.
+	 * Nastavení čísla účtu ve formátu CZ1427000000000000333999.
 	 *
 	 * @param $iban
 	 *
