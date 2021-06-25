@@ -97,7 +97,7 @@ class QRPlatba {
 	 * @return $this
 	 */
 	public function setAmount(float $amount): QRPlatba {
-		$this->keys['AM'] = sprintf('%.2f', $amount);
+		$this->keys['AM'] = number_format($amount, 2, '.', '');
 
 		return $this;
 	}
