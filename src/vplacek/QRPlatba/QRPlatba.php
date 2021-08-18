@@ -164,7 +164,7 @@ class QRPlatba {
 			throw new \InvalidArgumentException('Constant symbol is higher than 10 chars');
 		}
 
-		$this->keys['X-CS'] = $cs;
+		$this->keys['X-KS'] = $cs;
 
 		return $this;
 	}
