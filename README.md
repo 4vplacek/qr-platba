@@ -1,5 +1,7 @@
 # QR Platba
 
+[![Latest Stable Version](http://poser.pugx.org/4vplacek/qr-platba/v)](https://packagist.org/packages/4vplacek/qr-platba) [![Total Downloads](http://poser.pugx.org/4vplacek/qr-platba/downloads)](https://packagist.org/packages/4vplacek/qr-platba)  [![License](http://poser.pugx.org/4vplacek/qr-platba/license)](https://packagist.org/packages/4vplacek/qr-platba) [![PHP Version Require](http://poser.pugx.org/4vplacek/qr-platba/require/php)](https://packagist.org/packages/4vplacek/qr-platba)
+
 Knihovna pro generování QR plateb v PHP. 
 
 Inspirováno [dfridrich/QRPlatba](https://github.com/dfridrich/QRPlatba) , ale je to postaveno nad knihovnou [chillerlan/php-qrcode](https://github.com/chillerlan/php-qrcode) takže malá velikost a minimum závislostí :heart:
