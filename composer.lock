@@ -4,35 +4,38 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c4c5bf0fb974ee16c77e1aef87a3f54",
+    "content-hash": "ea75863743e69509e6304269079b45c4",
     "packages": [
         {
             "name": "chillerlan/php-qrcode",
-            "version": "4.3.0",
+            "version": "4.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chillerlan/php-qrcode.git",
-                "reference": "4968063fb3baeedb658293f89f9673fbf2499a3e"
+                "reference": "f5e243f3b61a60934780579430a951460f40888d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chillerlan/php-qrcode/zipball/4968063fb3baeedb658293f89f9673fbf2499a3e",
-                "reference": "4968063fb3baeedb658293f89f9673fbf2499a3e",
+                "url": "https://api.github.com/repos/chillerlan/php-qrcode/zipball/f5e243f3b61a60934780579430a951460f40888d",
+                "reference": "f5e243f3b61a60934780579430a951460f40888d",
                 "shasum": ""
             },
             "require": {
-                "chillerlan/php-settings-container": "^2.1",
+                "chillerlan/php-settings-container": "^2.1.4 || ^3.1",
                 "ext-mbstring": "*",
                 "php": "^7.4 || ^8.0"
             },
             "require-dev": {
-                "phan/phan": "^3.2.2",
-                "phpunit/phpunit": "^9.4",
-                "setasign/fpdf": "^1.8.2"
+                "phan/phan": "^5.4",
+                "phpmd/phpmd": "^2.15",
+                "phpunit/phpunit": "^9.6",
+                "setasign/fpdf": "^1.8.2",
+                "squizlabs/php_codesniffer": "^3.8"
             },
             "suggest": {
                 "chillerlan/php-authenticator": "Yet another Google authenticator! Also creates URIs for mobile apps.",
-                "setasign/fpdf": "Required to use the QR FPDF output."
+                "setasign/fpdf": "Required to use the QR FPDF output.",
+                "simple-icons/simple-icons": "SVG icons that you can use to embed as logos in the QR Code"
             },
             "type": "library",
             "autoload": {
@@ -59,7 +62,7 @@
                     "homepage": "https://github.com/chillerlan/php-qrcode/graphs/contributors"
                 }
             ],
-            "description": "A QR code generator. PHP 7.4+",
+            "description": "A QR code generator with a user friendly API. PHP 7.4+",
             "homepage": "https://github.com/chillerlan/php-qrcode",
             "keywords": [
                 "phpqrcode",
@@ -70,7 +73,7 @@
             ],
             "support": {
                 "issues": "https://github.com/chillerlan/php-qrcode/issues",
-                "source": "https://github.com/chillerlan/php-qrcode/tree/4.3.0"
+                "source": "https://github.com/chillerlan/php-qrcode/tree/4.4.1"
             },
             "funding": [
                 {
@@ -82,29 +85,31 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2020-11-18T20:49:20+00:00"
+            "time": "2024-01-06T16:56:58+00:00"
         },
         {
             "name": "chillerlan/php-settings-container",
-            "version": "2.1.1",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chillerlan/php-settings-container.git",
-                "reference": "98ccc1b31b31a53bcb563465c4961879b2b93096"
+                "reference": "c41e89f8bf963d1e88584a47fb78d1cd204b6e2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chillerlan/php-settings-container/zipball/98ccc1b31b31a53bcb563465c4961879b2b93096",
-                "reference": "98ccc1b31b31a53bcb563465c4961879b2b93096",
+                "url": "https://api.github.com/repos/chillerlan/php-settings-container/zipball/c41e89f8bf963d1e88584a47fb78d1cd204b6e2a",
+                "reference": "c41e89f8bf963d1e88584a47fb78d1cd204b6e2a",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": "^7.4 || ^8.0"
+                "php": "^8.1"
             },
             "require-dev": {
-                "phan/phan": "^4.0",
-                "phpunit/phpunit": "^9.5"
+                "phan/phan": "^5.4",
+                "phpcsstandards/php_codesniffer": "^3.8",
+                "phpmd/phpmd": "^2.15",
+                "phpunit/phpunit": "^10.5"
             },
             "type": "library",
             "autoload": {
@@ -123,11 +128,11 @@
                     "homepage": "https://github.com/codemasher"
                 }
             ],
-            "description": "A container class for immutable settings objects. Not a DI container. PHP 7.4+",
+            "description": "A container class for immutable settings objects. Not a DI container.",
             "homepage": "https://github.com/chillerlan/php-settings-container",
             "keywords": [
-                "PHP7",
                 "Settings",
+                "configuration",
                 "container",
                 "helper"
             ],
@@ -145,32 +150,34 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2021-01-06T15:57:03+00:00"
+            "time": "2024-01-05T23:55:20+00:00"
         },
         {
             "name": "nette/utils",
-            "version": "v3.2.2",
+            "version": "v4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "967cfc4f9a1acd5f1058d76715a424c53343c20c"
+                "reference": "d3ad0aa3b9f934602cb3e3902ebccf10be34d218"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/967cfc4f9a1acd5f1058d76715a424c53343c20c",
-                "reference": "967cfc4f9a1acd5f1058d76715a424c53343c20c",
+                "url": "https://api.github.com/repos/nette/utils/zipball/d3ad0aa3b9f934602cb3e3902ebccf10be34d218",
+                "reference": "d3ad0aa3b9f934602cb3e3902ebccf10be34d218",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2 <8.1"
+                "php": ">=8.0 <8.4"
             },
             "conflict": {
-                "nette/di": "<3.0.6"
+                "nette/finder": "<3",
+                "nette/schema": "<1.2.2"
             },
             "require-dev": {
-                "nette/tester": "~2.0",
-                "phpstan/phpstan": "^0.12",
-                "tracy/tracy": "^2.3"
+                "jetbrains/phpstorm-attributes": "dev-master",
+                "nette/tester": "^2.5",
+                "phpstan/phpstan": "^1.0",
+                "tracy/tracy": "^2.9"
             },
             "suggest": {
                 "ext-gd": "to use Image",
@@ -178,13 +185,12 @@
                 "ext-intl": "to use Strings::webalize(), toAscii(), normalize() and compare()",
                 "ext-json": "to use Nette\\Utils\\Json",
                 "ext-mbstring": "to use Strings::lower() etc...",
-                "ext-tokenizer": "to use Nette\\Utils\\Reflection::getUseStatements()",
-                "ext-xml": "to use Strings::length() etc. when mbstring is not available"
+                "ext-tokenizer": "to use Nette\\Utils\\Reflection::getUseStatements()"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "4.0-dev"
                 }
             },
             "autoload": {
@@ -228,9 +234,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v3.2.2"
+                "source": "https://github.com/nette/utils/tree/v4.0.4"
             },
-            "time": "2021-03-03T22:53:25+00:00"
+            "time": "2024-01-17T16:50:36+00:00"
         }
     ],
     "packages-dev": [],
@@ -245,5 +251,5 @@
         "ext-mbstring": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }
