@@ -9,6 +9,7 @@ use chillerlan\QRCode\Output\QROutputAbstract;
 use chillerlan\QRCode\QRCodeException;
 use chillerlan\Settings\SettingsContainerInterface;
 use Nette\Utils\Image;
+use Nette\Utils\ImageType;
 
 class QRPlatbaOutput extends QROutputAbstract {
 
@@ -58,7 +59,7 @@ class QRPlatbaOutput extends QROutputAbstract {
 	 *
 	 * @phan-suppress PhanUndeclaredTypeReturnType, PhanTypeMismatchReturn
 	 */
-	public function dump(string $file = null) {
+	public function dump(?string $file = null) {
 
 
 		$this->image = Image::fromBlank($this->length, $this->length);
@@ -84,7 +85,7 @@ class QRPlatbaOutput extends QROutputAbstract {
 		$textSize = (int)(2.5 * $this->scale);
 		$canvas->ttfText($textSize, 0, (int)($this->length / 10), $this->length + $textSize, Image::rgb(0, 0, 0), $font, "QR platba");
 
-		return $canvas->toString(Image::PNG, 80); // PNG, kvalita 80%
+		return $canvas->toString(ImageType::PNG, 80); // PNG, kvalita 80%
 
 	}
 
